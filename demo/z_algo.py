@@ -1,7 +1,5 @@
 import time
 from collections import defaultdict
-
-
 # use a defaultdict to avoid KeyError
 
 def calZArr(myStr, patLen, Z, lookupDict):

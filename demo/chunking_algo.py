@@ -1,6 +1,4 @@
 import time
-from Bio import SeqIO
-import pandas as pd
 
 def buildMap(sequence, chunk):
     #expect m/c time complexity; m - sequence length, c - chunk size
