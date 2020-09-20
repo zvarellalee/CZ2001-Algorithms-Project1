@@ -34,15 +34,14 @@ def checkPattern(sequence, pattern, sequenceLoc, patternLoc, chunk):
     #check front of chunk
     for x in range(0,patternLoc):
         sequenceIndex = sequenceLoc + (x - patternLoc) + sequence.index[0]
-        OutofBound = ( False if 0 > sequenceIndex or sequenceIndex > sequenceLength else True)
-        if (OutofBound and pattern[x] != sequence[sequenceIndex]) : return False
+        if (0 > sequenceIndex or sequenceIndex >= sequenceLength) : return False
+        elif (pattern[x] != sequence[sequenceIndex]) : return False
     #check back of chunk
     for x in range(patternLoc + chunk,len(pattern)):
         sequenceIndex = sequenceLoc + (x - patternLoc) + sequence.index[0]
-        OutofBound = ( False if 0 > sequenceIndex or sequenceIndex > sequenceLength else True)
-        if (OutofBound and pattern[x] != sequence[sequenceIndex]) : return False
+        if (0 > sequenceIndex or sequenceIndex >= sequenceLength) : return False
+        elif (pattern[x] != sequence[sequenceIndex]) : return False
     return True
-
 
 def chunkingAlgo(sequence, pattern):
     start_time = time.time()
