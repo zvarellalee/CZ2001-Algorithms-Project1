@@ -40,7 +40,11 @@ while active:
           "(7) Quit")
     c = int(input())
     if c==1:
-        print("Genome sequences in directory: ", os.listdir("Sequences"))
+        availableFasta = []
+        for file in os.listdir("Sequences"):
+            if not file.endswith(".txt"):
+                availableFasta.append(file)
+        print("Genome sequences in directory: ", availableFasta)
         print("Please enter file name: ")
         fileName = input()
         print("Enter subset size(0 for complete genome, current is %d): "%subset_size)
